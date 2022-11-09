@@ -1,4 +1,3 @@
-/* eslint-disable */
 const data = document.querySelector('#data');
 
 // Book class: Represent a book
