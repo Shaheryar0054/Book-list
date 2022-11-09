@@ -32,7 +32,7 @@ h2 {
 }
 
 .data-container {
-  box-shadow: 0px 8px 15px rgb(0 0 0 / 20%);
+  box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
   background-color: white;
   display: flex;
   align-items: center;
@@ -70,7 +70,7 @@ h2 {
 
 #remove-btn {
   padding: 3px 5px;
-  box-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
+  box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
   cursor: pointer;
   outline: none;
 }
