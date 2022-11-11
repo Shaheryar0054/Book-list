@@ -107,3 +107,40 @@ document.querySelector('#data').addEventListener('click', (e) => {
   // Remove book from local storage
   store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
+// Navigation section start here
+document.getElementById('list').addEventListener('click',()=>{
+  showList();
+});
+document.getElementById('add').addEventListener('click',()=>{
+  showAdd();
+});
+document.getElementById('cont').addEventListener('click',()=>{
+  showContact();
+});
+
+function defaultDisplay () {
+  document.getElementById('diplay-list').setAttribute('class','non-show');
+  document.getElementById('input-data').setAttribute('class','show');
+  document.getElementById('contact').setAttribute('class','non-show');
+  document.getElementById('footer').setAttribute('class','show');
+}
+defaultDisplay();
+
+function showList() {
+  document.getElementById('diplay-list').setAttribute('class','show');
+  document.getElementById('input-data').setAttribute('class','non-show');
+  document.getElementById('contact').setAttribute('class','non-show');
+}
+
+function showAdd() {
+  document.getElementById('diplay-list').setAttribute('class','non-show');
+  document.getElementById('input-data').setAttribute('class','show');
+  document.getElementById('contact').setAttribute('class','non-show');
+}
+
+function showContact () {
+  document.getElementById('diplay-list').setAttribute('class','non-show');
+  document.getElementById('input-data').setAttribute('class','non-show');
+  document.getElementById('contact').setAttribute('class','show');
+}
+
