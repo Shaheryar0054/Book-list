@@ -1,5 +1,5 @@
 /* eslint-disable */
-const data = document.querySelector('#data');
+const data = document.querySelector("#data");
 
 // Book class: Represent a book
 class Book {
@@ -18,10 +18,10 @@ class UI {
   }
 
   static addBookToList(book) {
-    const list = document.querySelector('#data');
+    const list = document.querySelector("#data");
 
-    const div = document.createElement('div');
-    div.className = 'data-container';
+    const div = document.createElement("div");
+    div.className = "data-container";
 
     div.innerHTML = `
         <p>"${book.title}"</p>
@@ -34,14 +34,14 @@ class UI {
   }
 
   static deleteBook(el) {
-    if (el.classList.contains('delete')) {
+    if (el.classList.contains("delete")) {
       el.parentElement.parentElement.remove();
     }
   }
 
   static clearField() {
-    document.querySelector('#title').value = '';
-    document.querySelector('#author').value = '';
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
   }
 }
 
@@ -49,10 +49,10 @@ class UI {
 class store {
   static getBooks() {
     let books;
-    if (localStorage.getItem('books') === null) {
+    if (localStorage.getItem("books") === null) {
       books = [];
     } else {
-      books = JSON.parse(localStorage.getItem('books'));
+      books = JSON.parse(localStorage.getItem("books"));
     }
     return books;
   }
@@ -62,7 +62,7 @@ class store {
 
     books.push(book);
 
-    localStorage.setItem('books', JSON.stringify(books));
+    localStorage.setItem("books", JSON.stringify(books));
   }
 
   static removeBook(authore) {
@@ -73,19 +73,19 @@ class store {
       }
     });
 
-    localStorage.setItem('books', JSON.stringify(books));
+    localStorage.setItem("books", JSON.stringify(books));
   }
 }
 
 //  Event for display books
-document.addEventListener('DOMContentLoaded', UI.displayBooks);
+document.addEventListener("DOMContentLoaded", UI.displayBooks);
 
 // Add event listener to the add button
-document.querySelector('#form').addEventListener('submit', (e) => {
-// Prevent actual submit
+document.querySelector("#form").addEventListener("submit", (e) => {
+  // Prevent actual submit
   e.preventDefault();
-  const title = document.querySelector('#title').value;
-  const authore = document.querySelector('#author').value;
+  const title = document.querySelector("#title").value;
+  const authore = document.querySelector("#author").value;
 
   // Instatiate book
   const book = new Book(title, authore);
@@ -101,46 +101,53 @@ document.querySelector('#form').addEventListener('submit', (e) => {
 });
 
 // Event to remove books
-document.querySelector('#data').addEventListener('click', (e) => {
-// Remove book from UI
+document.querySelector("#data").addEventListener("click", (e) => {
+  // Remove book from UI
   UI.deleteBook(e.target);
   // Remove book from local storage
   store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
 // Navigation section start here
-document.getElementById('list').addEventListener('click',()=>{
+document.getElementById("list").addEventListener("click", () => {
   showList();
 });
-document.getElementById('add').addEventListener('click',()=>{
+document.getElementById("add").addEventListener("click", () => {
   showAdd();
 });
-document.getElementById('cont').addEventListener('click',()=>{
+document.getElementById("cont").addEventListener("click", () => {
   showContact();
 });
 
-function defaultDisplay () {
-  document.getElementById('diplay-list').setAttribute('class','non-show');
-  document.getElementById('input-data').setAttribute('class','show');
-  document.getElementById('contact').setAttribute('class','non-show');
-  document.getElementById('footer').setAttribute('class','show');
+function defaultDisplay() {
+  document.getElementById("diplay-list").setAttribute("class", "non-show");
+  document.getElementById("input-data").setAttribute("class", "show");
+  document.getElementById("contact").setAttribute("class", "non-show");
+  document.getElementById("footer").setAttribute("class", "show");
 }
 defaultDisplay();
 
 function showList() {
-  document.getElementById('diplay-list').setAttribute('class','show');
-  document.getElementById('input-data').setAttribute('class','non-show');
-  document.getElementById('contact').setAttribute('class','non-show');
+  document.getElementById("diplay-list").setAttribute("class", "show");
+  document.getElementById("input-data").setAttribute("class", "non-show");
+  document.getElementById("contact").setAttribute("class", "non-show");
 }
 
 function showAdd() {
-  document.getElementById('diplay-list').setAttribute('class','non-show');
-  document.getElementById('input-data').setAttribute('class','show');
-  document.getElementById('contact').setAttribute('class','non-show');
+  document.getElementById("diplay-list").setAttribute("class", "non-show");
+  document.getElementById("input-data").setAttribute("class", "show");
+  document.getElementById("contact").setAttribute("class", "non-show");
 }
 
-function showContact () {
-  document.getElementById('diplay-list').setAttribute('class','non-show');
-  document.getElementById('input-data').setAttribute('class','non-show');
-  document.getElementById('contact').setAttribute('class','show');
+function showContact() {
+  document.getElementById("diplay-list").setAttribute("class", "non-show");
+  document.getElementById("input-data").setAttribute("class", "non-show");
+  document.getElementById("contact").setAttribute("class", "show");
 }
 
+document.write(new Date().getFullYear());
+
+function ondate() {
+  document.querySelector(".date").innerHTML = Date();
+}
+
+ondate();

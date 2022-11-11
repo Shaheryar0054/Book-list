@@ -151,3 +151,11 @@ h1 {
 #footer p {
   font-size: 20px;
 }
+
+.time {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+  margin-right: 100px;
+  font-size: 20px;
+}
